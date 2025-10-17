@@ -1,14 +1,22 @@
 <?php 
-    include_once("header.php");
-    include_once("menu.php");
+    include_once("includes/header.php");
+    include_once("includes/menu.php");
 
     if(empty($_SERVER["QUERY_STRING"])){
-        $pg = "conteudo.php";
-        include_once("$pg");
-    }elseif($_GET['pg']){
-        $pg = $_GET['pg'];
-        include_once("pg.php");
+        include_once("pages/home.php");
     }else{
-        echo "Página não encontrada!";
+        if(isset($_GET['pg'])){
+            $pg = $_GET['pg'];
+            $page = "pages/{$pg}.php";
+
+            if(file_exists($page)){
+                include_once($page);
+            }else{
+                echo "Página não existe!";
+            }
+        }else{
+            echo "Página não encontrada!";
+            }
     }
+    include_once("includes/footer.php");
 ?>
