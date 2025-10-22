@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link active" href="?pg=home">Home</a>
+                <a class="nav-link" href="?pg=home">Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="?pg=about">About</a>
